@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modelhandling/screen/chat_screen.dart';
 import 'package:modelhandling/screen/homepage.dart';
 import 'package:modelhandling/screen/student_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -24,11 +25,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: .fromSeed(
+        colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromARGB(255, 64, 150, 230),
         ),
       ),
-      home: const LoginPage(),
+      home: const ChatPage(username: 'User'),
     );
   }
 }
