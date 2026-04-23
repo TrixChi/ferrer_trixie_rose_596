@@ -16,10 +16,6 @@ class Message {
     // Explanation: Parse a raw Map (from the database) into a Message object by
     //              reading each key and assigning it to the correct field. The
     //              created_at value is a string that must be converted to DateTime.
-    // Hint: Return Message(id: map['id'], username: map['username'],
-    //       message: map['message'], createdAt: map['created_at'] != null
-    //       ? DateTime.parse(map['created_at']) : null).
-
     return Message(
       id: map['id'],
       username: map['username'],

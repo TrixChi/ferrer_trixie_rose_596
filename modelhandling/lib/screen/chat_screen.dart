@@ -22,8 +22,6 @@ class _ChatPageState extends State<ChatPage> {
     // Explanation: Call the necessary controller methods to load existing messages
     //              from the database and start listening for new real-time messages
     //              when this page first opens.
-    // Hint: Use controller.loadMessages() to fetch existing messages and
-    //       controller.subscribeToMessages() to start the real-time listener.
     super.initState();
     controller.loadMessages();
     controller.subscribeToMessages();
@@ -34,8 +32,6 @@ class _ChatPageState extends State<ChatPage> {
     // task 2
     // Explanation: Dispose all controllers to release resources and avoid memory
     //              leaks when this widget is removed from the widget tree.
-    // Hint: Call .dispose() on controller, messageController, and scrollController,
-    //       then call super.dispose() at the end.
     controller.dispose();
     messageController.dispose();
     scrollController.dispose();
@@ -49,10 +45,6 @@ class _ChatPageState extends State<ChatPage> {
     // Explanation: Send the typed message via the controller using the current
     //              username, clear the text field, then scroll to the bottom so
     //              the new message is immediately visible.
-    // Hint: Call controller.sendMessage(widget.username, messageController.text.trim()),
-    //       then messageController.clear(). Use Future.delayed with
-    //       scrollController.animateTo(scrollController.position.maxScrollExtent, ...)
-    //       to scroll after the list updates.
     controller.sendMessage(widget.username, messageController.text.trim());
     messageController.clear();
     Future.delayed(const Duration(milliseconds: 100), () {

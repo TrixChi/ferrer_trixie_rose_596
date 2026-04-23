@@ -46,14 +46,12 @@ class ChatController {
     // task 5
     // Explanation: Create a Message object from the provided username and message,
     //              then insert it into the Supabase 'messages' table.
-    // Hint: Instantiate Message(username: username, message: message), then call
-    //       await supabase.from('messages').insert(newMessage.toMap()).
     final newMessage = Message(username: username, message: message);
     final inserted = await supabase
-      .from('messages')
-      .insert(newMessage.toMap())
-      .select()
-      .single();
+        .from('messages')
+        .insert(newMessage.toMap())
+        .select()
+        .single();
 
     _messages.add(Message.fromMap(inserted));
     _messagesController.add(_messages);
